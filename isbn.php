@@ -68,7 +68,7 @@ class isbn {
       $this->isIsbn10 = false;
       $this->isIsbn13 = true;
       $this->prefix = $matches[1]; 
-      $this->get_groupRecord(substr($this->isbn, strlen($this->prefix)));
+      $this->setGroupRecord(substr($this->isbn, strlen($this->prefix)));
       $this->setAllDetails();
     }
     else if (preg_match('/^(978|979)-(\d+)-(\d+)-(\d+)-([\dX])$/', $this->isbn, $matches) && $this->isbnLength == 17) {

@@ -89,12 +89,11 @@ class isbn {
   
   private function setGroupRecord($isbn = NULL) { 
     $matches = array();  
-    global $isbn_data;
     if(!$isbn) {
       $isbn = $this->isbn;    
     }  
     
-    foreach ($isbn_data['groups'] as $key => $value) {
+    foreach ($this->isbn_data['groups'] as $key => $value) {
       if (preg_match('/^' . $key . '(.+)/' , $isbn, $matches)) {
         $this->group = $key;
         $this->groupRecord = $value;
